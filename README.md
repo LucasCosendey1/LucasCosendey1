@@ -21,16 +21,23 @@
 
 ### 📊 GitHub Stats
 
-[![GitHub Stats](https://github-readme-stats.vercel.app/api?username=LucasCosendey1&show_icons=true&include_all_commits=true&count_private=true&theme=transparent&title_color=F5A623&icon_color=F5A623&text_color=ffffff&border_color=F5A623)](https://github.com/LucasCosendey1)
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=LucasCosendey1&layout=compact&langs_count=6&theme=transparent&title_color=F5A623&text_color=ffffff&border_color=F5A623)](https://github.com/LucasCosendey1)
+<!-- WakaTime/streak via demolab — mais estável que vercel -->
+<a href="https://github.com/LucasCosendey1">
+  <img height="160" src="https://githubbonito.vercel.app/api?username=LucasCosendey1&show_icons=true&count_private=true&include_all_commits=true&theme=dark&title_color=F5A623&icon_color=F5A623&text_color=fff&bg_color=0d1117&border_color=F5A623&border_radius=10" />
+  <img height="160" src="https://githubbonito.vercel.app/api/top-langs/?username=LucasCosendey1&layout=compact&langs_count=6&theme=dark&title_color=F5A623&text_color=fff&bg_color=0d1117&border_color=F5A623&border_radius=10" />
+</a>
+
+<br/>
+
+<img src="https://streak-stats.demolab.com?user=LucasCosendey1&theme=dark&background=0d1117&ring=F5A623&fire=F7C948&currStreakLabel=F5A623&border=F5A623&sideLabels=ffffff&dates=888888&border_radius=10" height="140"/>
 
 ---
 
 ### 🍩 Repositórios: Públicos vs Privados
 
-<img src="./donut.svg" alt="Donut repos"/>
+<img src="./donut.svg" alt="Donut chart de repositórios"/>
 
-> *Atualizado automaticamente todo dia via GitHub Actions*
+> ⚙️ *Gerado automaticamente via GitHub Actions. Rode o workflow manualmente pela primeira vez em **Actions → Update Repo Donut → Run workflow**.*
 
 ---
 
