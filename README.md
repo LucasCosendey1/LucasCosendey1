@@ -4,7 +4,7 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lucas-cosendey-43ab6324b/)
 [![Honey Labs](https://img.shields.io/badge/🐝%20Honey%20Labs-F5A623?style=flat-square&logoColor=black)](https://honeylabs.com.br)
-[![Portal Transparência](https://img.shields.io/badge/🏛️%20Transparência%20Itabaiana-2E7D32?style=flat-square&logoColor=white)](https://transparencia2.itabaiana.pb.gov.br/)
+[![Portal de Transparência](https://img.shields.io/badge/🏛️%20Transparência%20Itabaiana-2E7D32?style=flat-square&logoColor=white)](https://transparencia2.itabaiana.pb.gov.br/)
 
 ---
 
