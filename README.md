@@ -52,8 +52,8 @@
 ### ◆ &nbsp;Snake
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./github-snake-dark.svg"/>
-  <img src="./github-snake.svg" width="100%"/>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/LucasCosendey1/LucasCosendey1/output/dist/github-snake-dark.svg"/>
+  <img src="https://raw.githubusercontent.com/LucasCosendey1/LucasCosendey1/output/dist/github-snake.svg" width="100%"/>
 </picture>
 
 ---
