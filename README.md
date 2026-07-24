@@ -23,10 +23,9 @@
 
 <img height="150em" src="https://streak-stats.demolab.com?user=LucasCosendey1&theme=dark&background=0d1117&ring=F5A623&fire=F7C948&currStreakLabel=F5A623&border=F5A623&sideLabels=ffffff&dates=888888&border_radius=10"/>
 
-![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=LucasCosendey1&theme=github_dark)
-
-<img height="150em" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=LucasCosendey1&theme=github_dark"/>
-<img height="150em" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=LucasCosendey1&theme=github_dark"/>
+<img height="150em" src="https://streak-stats.demolab.com?user=LucasCosendey1&theme=dark&background=0d1117&ring=F5A623&fire=F7C948&currStreakLabel=F5A623&border=F5A623&sideLabels=ffffff&dates=888888&border_radius=10"/>
+<img height="150em" src="https://github-readme-stats.vercel.app/api?username=LucasCosendey1&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117&title_color=F5A623&icon_color=F7C948&text_color=ffffff"/>
+<img height="150em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=LucasCosendey1&layout=donut&theme=dark&hide_border=true&bg_color=0d1117&title_color=F5A623&text_color=ffffff"/>
 
 ---
 
