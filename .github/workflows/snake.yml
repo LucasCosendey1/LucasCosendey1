@@ -14,19 +14,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Criar pasta dist se não existir
-        run: mkdir -p dist
-
       - uses: Platane/snk@v3
         with:
           github_user_name: LucasCosendey1
           outputs: |
-            dist/github-snake.svg?palette=github-dark
-            dist/github-snake-dark.svg?palette=github-dark&color_dots=#F5A623,#F7C948,#e6a817,#b87d0f,#7a5509
+            dist/github-snake.svg?color_snake=#F5A623&color_dots=#0d1117,#2a1f00,#7a5509,#b87d0f,#F5A623
+            dist/github-snake-dark.svg?color_snake=#F7C948&color_dots=#0d1117,#2a1f00,#7a5509,#b87d0f,#F7C948
 
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add dist/
+          git add github-snake.svg github-snake-dark.svg
           git diff --cached --quiet || git commit -m "chore: atualiza snake [skip ci]"
           git push
