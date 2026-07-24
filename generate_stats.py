@@ -17,16 +17,14 @@ def fetch(url):
 
 def get_stats():
     user  = fetch(API_BASE)
-    # type=source exclui forks completamente
-    repos = fetch(f"{API_BASE}/repos?per_page=100&type=source")
+    repos = fetch(f"{API_BASE}/repos?per_page=100&type=owner")
+    # remove forks e arquivados logo de cara
+    repos = [r for r in repos if not r.get("fork") and not r.get("archived")]
 
     stars      = sum(r.get("stargazers_count", 0) for r in repos)
     lang_bytes = {}
 
     for repo in repos:
-        # dupla proteção: ignora forks e repos arquivados
-        if repo.get("fork") or repo.get("archived"):
-            continue
         name = repo["name"]
         try:
             langs = fetch(f"https://api.github.com/repos/{USERNAME}/{name}/languages")
@@ -41,7 +39,7 @@ def get_stats():
 
     return {
         "followers":    user.get("followers", 0),
-        "public_repos": user.get("public_repos", 0),
+        "public_repos": len(repos),
         "stars":        stars,
         "top_langs":    top_langs,
         "updated":      datetime.utcnow().strftime("%d/%m/%Y %H:%M UTC"),
