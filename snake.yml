@@ -1,0 +1,32 @@
+name: Gerar Snake
+
+on:
+  schedule:
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+
+jobs:
+  snake:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Criar pasta dist se não existir
+        run: mkdir -p dist
+
+      - uses: Platane/snk@v3
+        with:
+          github_user_name: LucasCosendey1
+          outputs: |
+            dist/github-snake.svg?palette=github-dark
+            dist/github-snake-dark.svg?palette=github-dark&color_dots=#F5A623,#F7C948,#e6a817,#b87d0f,#7a5509
+
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dist/
+          git diff --cached --quiet || git commit -m "chore: atualiza snake [skip ci]"
+          git push
