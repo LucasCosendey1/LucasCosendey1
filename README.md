@@ -1,12 +1,7 @@
 <div align="center">
 
-<!--  HEADER  -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=F5A623,F7C948,F5A623&height=180&section=header&text=Lucas%20Cosendey&fontSize=48&fontColor=fff&fontAlignY=40&desc=Full%20Stack%20Developer%20%7C%20CEO%20%40%20Honey%20Labs&descAlignY=60&descSize=16&animation=fadeIn" width="100%"/>
 
-<!--  ABELHAS  -->
-<img src="./bees.gif" width="100%"/>
-
-<!--  BADGES  -->
 <p>
   <a href="https://www.linkedin.com/in/lucas-cosendey-43ab6324b/">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
@@ -57,8 +52,8 @@
 ### ◆ &nbsp;Snake
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./dist/github-snake-dark.svg"/>
-  <img src="./dist/github-snake.svg" width="100%"/>
+  <source media="(prefers-color-scheme: dark)" srcset="./github-snake-dark.svg"/>
+  <img src="./github-snake.svg" width="100%"/>
 </picture>
 
 ---
@@ -67,7 +62,6 @@
 
 ---
 
-<!--  FOOTER  -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=F5A623,F7C948,F5A623&height=80&section=footer&animation=fadeIn" width="100%"/>
 
 </div>
