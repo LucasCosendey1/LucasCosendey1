@@ -1,29 +1,37 @@
-name: Gerar Snake
+name: Atualizar GitHub Stats
 
 on:
   schedule:
-    - cron: "0 7 * * *"
-  workflow_dispatch:
+    - cron: "0 6 * * *"   # todo dia às 6h UTC (3h Brasília)
+  workflow_dispatch:       # permite rodar manualmente
 
 jobs:
-  snake:
+  update:
     runs-on: ubuntu-latest
     permissions:
       contents: write
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: Platane/snk@v3
+      - name: Configurar Python
+        uses: actions/setup-python@v5
         with:
-          github_user_name: LucasCosendey1
-          outputs: |
-            dist/github-snake.svg?color_snake=#F5A623&color_dots=#0d1117,#2a1f00,#7a5509,#b87d0f,#F5A623
-            dist/github-snake-dark.svg?color_snake=#F7C948&color_dots=#0d1117,#2a1f00,#7a5509,#b87d0f,#F7C948
+          python-version: "3.11"
 
-      - run: |
-          git config user.name "github-actions[bot]"
+      - name: Instalar dependências
+        run: pip install requests
+
+      - name: Gerar SVG
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python generate_stats.py
+
+      - name: Commitar SVG atualizado
+        run: |
+          git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add github-snake.svg github-snake-dark.svg
-          git diff --cached --quiet || git commit -m "chore: atualiza snake [skip ci]"
+          git add github-stats.svg
+          git diff --cached --quiet || git commit -m "chore: atualiza stats [skip ci]"
           git push
