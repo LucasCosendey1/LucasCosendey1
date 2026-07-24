@@ -6,6 +6,8 @@
 [![Honey Labs](https://img.shields.io/badge/🐝%20Honey%20Labs-F5A623?style=flat-square&logoColor=black)](https://honeylabs.com.br)
 [![Portal de Transparência](https://img.shields.io/badge/🏛️%20Transparência%20Itabaiana-2E7D32?style=flat-square&logoColor=white)](https://transparencia2.itabaiana.pb.gov.br/)
 
+<img src="./bees.svg" width="100%"/>
+
 ---
 
 ### 🛠️ Tech Stack
@@ -24,6 +26,15 @@
 <img src="https://streak-stats.demolab.com?user=LucasCosendey1&theme=dark&background=0d1117&ring=F5A623&fire=F7C948&currStreakLabel=F5A623&border=F5A623&sideLabels=ffffff&dates=888888&border_radius=10"/>
 
 <img src="./github-stats.svg"/>
+
+---
+
+### 🐍 Snake
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./dist/github-snake-dark.svg"/>
+  <img src="./dist/github-snake.svg" width="100%"/>
+</picture>
 
 ---
 
