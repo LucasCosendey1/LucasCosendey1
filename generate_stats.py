@@ -28,9 +28,11 @@ def get_stats():
         name = repo["name"]
         try:
             langs = fetch(f"https://api.github.com/repos/{USERNAME}/{name}/languages")
+             print(f"{name}: {langs}")
             for lang, b in langs.items():
                 lang_bytes[lang] = lang_bytes.get(lang, 0) + b
         except Exception:
+            print(f"ERRO em {name}: {e}")
             pass
 
     total_bytes   = sum(lang_bytes.values()) or 1
