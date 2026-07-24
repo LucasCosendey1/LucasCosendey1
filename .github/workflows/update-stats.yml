@@ -26,7 +26,7 @@ jobs:
       - name: Gerar SVG
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/generate_stats.py
+        run: python generate_stats.py
 
       - name: Commitar SVG atualizado
         run: |
