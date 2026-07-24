@@ -1,35 +1,60 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=F5A623,F7C948,F5A623&height=160&section=header&text=Lucas%20Cosendey&fontSize=45&fontColor=fff&fontAlignY=38&desc=Full%20Stack%20Developer%20%7C%20CEO%20%40%20Honey%20Labs&descAlignY=58&descSize=16&animation=fadeIn" width="100%"/>
+<!--  HEADER  -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=F5A623,F7C948,F5A623&height=180&section=header&text=Lucas%20Cosendey&fontSize=48&fontColor=fff&fontAlignY=40&desc=Full%20Stack%20Developer%20%7C%20CEO%20%40%20Honey%20Labs&descAlignY=60&descSize=16&animation=fadeIn" width="100%"/>
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lucas-cosendey-43ab6324b/)
-[![Honey Labs](https://img.shields.io/badge/🐝%20Honey%20Labs-F5A623?style=flat-square&logoColor=black)](https://honeylabs.com.br)
-[![Portal de Transparência](https://img.shields.io/badge/🏛️%20Transparência%20Itabaiana-2E7D32?style=flat-square&logoColor=white)](https://transparencia2.itabaiana.pb.gov.br/)
-
+<!--  ABELHAS  -->
 <img src="./bees.gif" width="100%"/>
 
+<!--  BADGES  -->
+<p>
+  <a href="https://www.linkedin.com/in/lucas-cosendey-43ab6324b/">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  </a>
+  <a href="https://honeylabs.com.br">
+    <img src="https://img.shields.io/badge/🐝_Honey_Labs-F5A623?style=for-the-badge&logoColor=black"/>
+  </a>
+  <a href="https://transparencia2.itabaiana.pb.gov.br/">
+    <img src="https://img.shields.io/badge/🏛️_SisTFD_Itabaiana-2E7D32?style=for-the-badge&logoColor=white"/>
+  </a>
+  <a href="https://www.instagram.com/honeylabs.io/">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
+  </a>
+</p>
+
 ---
 
-### 🛠️ Tech Stack
-
-![JavaScript](https://img.shields.io/badge/JS-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TS-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+```
+◆  TRANSFORMAMOS IDEIAS EM SOFTWARE REAL  ◆
+```
 
 ---
 
-### 📊 GitHub Stats
+### ◆ &nbsp;Tech Stack
+
+<p>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/>
+</p>
+
+---
+
+### ◆ &nbsp;GitHub Stats
 
 <img src="https://streak-stats.demolab.com?user=LucasCosendey1&theme=dark&background=0d1117&ring=F5A623&fire=F7C948&currStreakLabel=F5A623&border=F5A623&sideLabels=ffffff&dates=888888&border_radius=10"/>
 
-<img src="./github-stats.svg"/>
+<br/>
+
+<img src="./github-stats.svg" width="500"/>
 
 ---
 
-### 🐍 Snake
+### ◆ &nbsp;Snake
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./dist/github-snake-dark.svg"/>
@@ -38,6 +63,11 @@
 
 ---
 
+> *"Bom software não é luxo — é a diferença entre uma ideia que fica no papel e um negócio que cresce."*
+
+---
+
+<!--  FOOTER  -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=F5A623,F7C948,F5A623&height=80&section=footer&animation=fadeIn" width="100%"/>
 
 </div>
