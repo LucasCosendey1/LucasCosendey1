@@ -6,7 +6,7 @@
 [![Honey Labs](https://img.shields.io/badge/🐝%20Honey%20Labs-F5A623?style=flat-square&logoColor=black)](https://honeylabs.com.br)
 [![Portal de Transparência](https://img.shields.io/badge/🏛️%20Transparência%20Itabaiana-2E7D32?style=flat-square&logoColor=white)](https://transparencia2.itabaiana.pb.gov.br/)
 
-<img src="./bees.svg" width="100%"/>
+<img src="./bees.gif" width="100%"/>
 
 ---
 
