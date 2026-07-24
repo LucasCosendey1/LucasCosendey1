@@ -1,5 +1,6 @@
-import requests
+import os
 import json
+import requests
 from datetime import datetime
 
 USERNAME = "LucasCosendey1"
@@ -7,7 +8,7 @@ API_BASE = f"https://api.github.com/users/{USERNAME}"
 
 def fetch(url):
     headers = {"Accept": "application/vnd.github+json"}
-    token = __import__("os").environ.get("GITHUB_TOKEN")
+    token = os.environ.get("GITHUB_TOKEN")
     if token:
         headers["Authorization"] = f"Bearer {token}"
     r = requests.get(url, headers=headers, timeout=10)
@@ -15,28 +16,18 @@ def fetch(url):
     return r.json()
 
 def get_stats():
-    user = fetch(API_BASE)
-    repos = fetch(f"{API_BASE}/repos?per_page=100&type=owner")
+    user  = fetch(API_BASE)
+    # type=source exclui forks completamente
+    repos = fetch(f"{API_BASE}/repos?per_page=100&type=source")
 
     stars      = sum(r.get("stargazers_count", 0) for r in repos)
-    commits    = 0
     lang_bytes = {}
 
     for repo in repos:
-        if repo.get("fork"):
+        # dupla proteção: ignora forks e repos arquivados
+        if repo.get("fork") or repo.get("archived"):
             continue
         name = repo["name"]
-        # commits no default branch
-        try:
-            commits_data = fetch(
-                f"https://api.github.com/repos/{USERNAME}/{name}/commits"
-                f"?author={USERNAME}&per_page=1"
-            )
-            # pega total via Link header — aqui só contamos o que vier
-            commits += 1 if commits_data else 0
-        except Exception:
-            pass
-        # linguagens
         try:
             langs = fetch(f"https://api.github.com/repos/{USERNAME}/{name}/languages")
             for lang, b in langs.items():
@@ -44,17 +35,16 @@ def get_stats():
         except Exception:
             pass
 
-    total_bytes = sum(lang_bytes.values()) or 1
-    top_langs = sorted(lang_bytes.items(), key=lambda x: x[1], reverse=True)[:5]
-    top_langs_pct = [(l, round(b / total_bytes * 100, 1)) for l, b in top_langs]
+    total_bytes   = sum(lang_bytes.values()) or 1
+    top_langs_raw = sorted(lang_bytes.items(), key=lambda x: x[1], reverse=True)[:5]
+    top_langs     = [(l, round(b / total_bytes * 100, 1)) for l, b in top_langs_raw]
 
     return {
-        "name":       user.get("name") or USERNAME,
-        "followers":  user.get("followers", 0),
+        "followers":    user.get("followers", 0),
         "public_repos": user.get("public_repos", 0),
-        "stars":      stars,
-        "top_langs":  top_langs_pct,
-        "updated":    datetime.utcnow().strftime("%d/%m/%Y %H:%M UTC"),
+        "stars":        stars,
+        "top_langs":    top_langs,
+        "updated":      datetime.utcnow().strftime("%d/%m/%Y %H:%M UTC"),
     }
 
 LANG_COLORS = {
@@ -73,80 +63,51 @@ LANG_COLORS = {
 DEFAULT_COLOR = "#8f8f8f"
 
 def make_svg(stats):
-    langs       = stats["top_langs"]
-    total_pct   = sum(p for _, p in langs)
-    bar_width   = 460
-    W, H        = 500, 310
+    langs      = stats["top_langs"]
+    total_pct  = sum(p for _, p in langs) or 1
+    bar_width  = 460
+    W, H       = 500, 310
 
-    # barras de linguagens
-    lang_bars = ""
-    lang_labels = ""
+    lang_bars = lang_labels = ""
     x = 0
     for i, (lang, pct) in enumerate(langs):
         color = LANG_COLORS.get(lang, DEFAULT_COLOR)
-        w = round(bar_width * pct / total_pct)
+        w     = round(bar_width * pct / total_pct)
         lang_bars += (
-            f'<rect x="{20 + x}" y="200" width="{w}" height="12" '
-            f'rx="3" fill="{color}"/>'
+            f'<rect x="{20+x}" y="200" width="{w}" height="12" rx="3" fill="{color}"/>'
         )
-        col = i % 3
-        row = i // 3
-        lx  = 20 + col * 155
-        ly  = 228 + row * 22
+        col, row = i % 3, i // 3
+        lx, ly   = 20 + col * 155, 228 + row * 22
         lang_labels += (
-            f'<circle cx="{lx + 6}" cy="{ly}" r="5" fill="{color}"/>'
-            f'<text x="{lx + 16}" y="{ly + 4}" '
-            f'font-size="12" fill="#ccc">{lang} {pct}%</text>'
+            f'<circle cx="{lx+6}" cy="{ly}" r="5" fill="{color}"/>'
+            f'<text x="{lx+16}" y="{ly+4}" font-size="12" fill="#ccc">{lang} {pct}%</text>'
         )
         x += w
 
-    svg = f"""<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}"
+    return f"""<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}"
      xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI',Arial,sans-serif">
-
   <rect width="{W}" height="{H}" rx="12" fill="#0d1117"/>
-  <rect x="1" y="1" width="{W-2}" height="{H-2}" rx="12"
-        fill="none" stroke="#F5A623" stroke-width="1.5"/>
-
-  <!-- título -->
-  <text x="20" y="38" font-size="16" font-weight="700" fill="#F5A623">📊 GitHub Stats</text>
-  <text x="{W-20}" y="38" font-size="11" fill="#555" text-anchor="end">
-    {stats["updated"]}
-  </text>
-
-  <!-- divisor -->
+  <rect x="1" y="1" width="{W-2}" height="{H-2}" rx="12" fill="none" stroke="#F5A623" stroke-width="1.5"/>
+  <text x="20" y="38" font-size="16" font-weight="700" fill="#F5A623">GitHub Stats</text>
+  <text x="{W-20}" y="38" font-size="11" fill="#555" text-anchor="end">{stats["updated"]}</text>
   <line x1="20" y1="50" x2="{W-20}" y2="50" stroke="#1e1e1e" stroke-width="1"/>
-
-  <!-- métricas -->
   <text x="20"  y="90" font-size="22" font-weight="700" fill="#fff">{stats["public_repos"]}</text>
   <text x="20"  y="108" font-size="11" fill="#888">Public Repos</text>
-
   <text x="160" y="90" font-size="22" font-weight="700" fill="#fff">{stats["stars"]}</text>
   <text x="160" y="108" font-size="11" fill="#888">Total Stars</text>
-
   <text x="300" y="90" font-size="22" font-weight="700" fill="#fff">{stats["followers"]}</text>
   <text x="300" y="108" font-size="11" fill="#888">Followers</text>
-
-  <!-- divisor -->
   <line x1="20" y1="130" x2="{W-20}" y2="130" stroke="#1e1e1e" stroke-width="1"/>
-
-  <!-- linguagens -->
   <text x="20" y="158" font-size="13" font-weight="600" fill="#F5A623">Top Languages</text>
-
-  <!-- barra de linguagens -->
   <rect x="20" y="168" width="{bar_width}" height="12" rx="3" fill="#1e1e1e"/>
   {lang_bars}
-
-  <!-- legenda -->
   {lang_labels}
-
 </svg>"""
-    return svg
 
 if __name__ == "__main__":
     print("Buscando dados do GitHub...")
     stats = get_stats()
     print(json.dumps(stats, indent=2, ensure_ascii=False))
-
     svg = make_svg(stats)
     with open("github-stats.svg", "w", encoding="utf-8") as f:
         f.write(svg)
