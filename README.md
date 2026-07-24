@@ -12,16 +12,10 @@
   <a href="https://transparencia2.itabaiana.pb.gov.br/">
     <img src="https://img.shields.io/badge/🏛️_SisTFD_Itabaiana-2E7D32?style=for-the-badge&logoColor=white"/>
   </a>
-  <a href="https://www.instagram.com/honeylabs.io/">
+  <a href="https://www.instagram.com/luke.cosendey/">
     <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
   </a>
 </p>
-
----
-
-```
-◆  TRANSFORMAMOS IDEIAS EM SOFTWARE REAL  ◆
-```
 
 ---
 
@@ -48,8 +42,6 @@
 <img src="./github-stats.svg" width="500"/>
 
 ---
-
-### ◆ &nbsp;Snake
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/LucasCosendey1/LucasCosendey1/main/dist/github-snake-dark.svg"/>
