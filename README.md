@@ -33,8 +33,6 @@
 
 ---
 
-### ◆ &nbsp;GitHub Stats
-
 <img src="https://streak-stats.demolab.com?user=LucasCosendey1&theme=dark&background=0d1117&ring=F5A623&fire=F7C948&currStreakLabel=F5A623&border=F5A623&sideLabels=ffffff&dates=888888&border_radius=10"/>
 
 <br/>
